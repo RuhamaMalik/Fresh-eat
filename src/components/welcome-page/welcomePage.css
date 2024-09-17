@@ -1,0 +1,126 @@
+/* Text Animation  */
+
+.animate-black, .animate-red {
+    position: absolute;
+    top: 0.7%;
+    width: 0;
+    height: 0;
+    animation: black-color-spread 3s  ease-in-out forwards;
+  }
+  
+  .animate-red{
+    animation: red-color-spread 3s  ease-in-out forwards;
+  }
+  
+  
+  /* Assigning animation delay for each letter */
+  
+  .letter-0 {
+    animation-delay: 0s;
+  }
+  
+  .letter-1 {
+    animation-delay: 2s;
+  }
+  .letter-2 {
+    animation-delay: 4s;
+  }
+  
+  .letter-3 {
+    animation-delay: 6s;
+  }
+  .letter-4 {
+    animation-delay: 8s;
+  }
+  .letter-5 {
+    animation-delay: 10s;
+  }
+  .letter-6 {
+    animation-delay: 12s;
+  }
+  .letter-7 {
+    animation-delay: 14s;
+  }
+  .letter-8 {
+    animation-delay: 16s;
+  }
+  
+  @keyframes black-color-spread {
+    from {
+      width: 0;
+      height: 0;
+      background: #373737;
+      color: transparent;
+  
+      background-size: contain;
+      background-position: center;
+      -webkit-background-clip: text;
+      left: 25%;
+    }
+    to {
+      width: 60px;
+      height: 80px;
+      background: #373737;
+      background-size: contain;
+      background-position: center;
+      color: transparent;
+      left: 0%;
+  
+      -webkit-background-clip: text;
+    }
+  }
+  @keyframes red-color-spread {
+    from {
+      width: 0;
+      height: 0;
+      background: #eb0029;
+      color: transparent;
+  
+      background-size: contain;
+      background-position: center;
+      -webkit-background-clip: text;
+      left: 25%;
+    }
+    to {
+      width: 60px;
+      height: 80px;
+      background: #eb0029;
+      background-size: contain;
+      background-position: center;
+      color: transparent;
+      left: 0%;
+  
+      -webkit-background-clip: text;
+    }
+  }
+  
+  
+  
+  /* ///////////////////////// */
+  
+  
+  /* Animation for hiding columns from right to left */
+  @keyframes hide-columns {
+    0% {
+      opacity: 1;
+      width: 100%;
+    }
+    100% {
+      opacity: 0;
+      width: 0;
+    }
+  }
+  
+  .column {
+    width: 100%;
+    animation: hide-columns 1s ease-in-out forwards 4s;
+  }
+  .hideCol {
+    width: 100%;
+    animation: hide-columns .4s ease-in-out forwards 4s;
+  }
+  .hidden {
+    display: none;
+  }
+  
+  
