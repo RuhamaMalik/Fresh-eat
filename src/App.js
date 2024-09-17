@@ -1,5 +1,5 @@
 import "./App.css";
-import WelcomeScreen from "./components/welcome-page/WelcomePage";
+import WelcomeScreen from "./components/animations/welcome-page/WelcomePage";
 function App() {
   return (
     <>
