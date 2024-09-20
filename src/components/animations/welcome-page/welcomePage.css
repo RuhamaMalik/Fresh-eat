@@ -49,7 +49,7 @@
     from {
       width: 0;
       height: 0;
-      background: #373737;
+      background: var(--contrast-dark);
       color: transparent;
   
       background-size: contain;
@@ -60,7 +60,7 @@
     to {
       width: 60px;
       height: 80px;
-      background: #373737;
+      background:  var(--contrast-dark);
       background-size: contain;
       background-position: center;
       color: transparent;
@@ -73,7 +73,7 @@
     from {
       width: 0;
       height: 0;
-      background: #eb0029;
+      background: var(--contrast);
       color: transparent;
   
       background-size: contain;
@@ -84,7 +84,7 @@
     to {
       width: 60px;
       height: 80px;
-      background: #eb0029;
+      background: var(--contrast);
       background-size: contain;
       background-position: center;
       color: transparent;

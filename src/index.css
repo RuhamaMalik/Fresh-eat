@@ -14,4 +14,11 @@ body {
     monospace;
 } */
 
-
+:root {
+  --contrast: #eb0029;
+  --contrast2: #FC791A;
+  --contrast-dark: #373737;
+  --dark: #010f1c;
+  --light: #ffffff;
+  --text: #5C6574;
+}
