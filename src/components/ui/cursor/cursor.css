@@ -1,0 +1,53 @@
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translateZ(0);
+    visibility: hidden;
+}
+
+.cursor-inner, .cursor-outer {
+    visibility: visible;
+    z-index: 10000000;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    border-radius: 50%; /* Ensures round shape */
+}
+
+/* Round shape for cursor */
+.cursor-inner {
+    width: 8px;
+    height: 8px;
+    background-color: var(--contrast2);
+}
+
+.cursor-outer {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--contrast2);
+    opacity: 0.5;
+}
+
+/* On hover: makes cursor larger and semi-transparent */
+/* .cursor-hover.cursor-inner {
+    width: 70px;
+    height: 70px;
+    background-color: var(--contrast2);
+    opacity: 0.3;
+}
+
+.cursor-hover.cursor-outer {
+    opacity: 0;
+} */
+
+
+a:hover .cursor-inner, .cursor-hover.cursor-inner,
+.nav-link:hover .cursor-inner {
+    width: 70px;
+    height: 70px;
+    opacity: 0.3;
+}
+
+a:hover .cursor-outer, .cursor-hover.cursor-outer {
+    opacity: 0;
+}
