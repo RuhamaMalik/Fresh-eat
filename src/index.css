@@ -7,6 +7,8 @@ body {
   font-family: "Epilogue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:  0.4s ease-in-out ;
+
 }
 
 /* code {
@@ -32,11 +34,17 @@ body {
 
 .nav-link {
   transition: color 0.4s ease-in-out ;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000000 !important;
 }
 
 .nav-link:hover {
   color: var(--contrast);
 }
+
+
+
 
 /* /////////////////// Scroll bar */
 
@@ -59,4 +67,19 @@ body {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+
+
+/* ///////////////// Z-index */
+
+.customIndex{
+  position: relative;
+  z-index: 10000000000 !important;
+}
+
+
+/* ////////////////  Cursor Pointer */
+
+.pointer{
+  cursor: pointer;
 }

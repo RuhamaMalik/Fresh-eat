@@ -1,19 +1,19 @@
 import { NavLink } from 'react-router-dom'
 import ButtonIn from '../../ui/buttons/ButtonIn'
 import ButtonOut from '../../ui/buttons/ButtonOut'
-import MouseCursor from '../../ui/cursor/Cursor'
+// import MouseCursor from '../../ui/cursor/Cursor'
 
 const CartModal = () => {
     return (
         <>
-            <MouseCursor />
+            {/* <MouseCursor /> */}
 
-            <div className={`max-h-[700px] p-[18px] w-[300px] bg-white absolute top-14 -right-6 sm:top-12 sm:right-0  shadow-lg z-20 animate__animated animate__fadeIn flex flex-col`} style={{ boxShadow: "var(--box-shadow2)" }}>
+            <div className={`max-h-[700px] p-[18px] w-[300px] bg-white absolute top-14 -right-6 sm:top-12 sm:right-0  shadow-lg  animate__animated animate__fadeIn flex flex-col z-50`} style={{ boxShadow: "var(--box-shadow2)" }}>
 
                 <div className="flex flex-col p-4 gap-4 text-base items-start">
                     {/* Cart Item 1 */}
                     <div className="flex items-center rounded-lg shadow-sm hover:bg-gray-100 ">
-                        <NavLink to="/cart" className={`w-28 h-[70px] border border-stone-300 rounded-lg overflow-hidden `} ><img className=" w-full h-full   rounded-lg object-cover rounded-l-lg" src="https://www.cookerru.com/wp-content/uploads/2022/09/pan-fried-noodles-main-preview.jpg" alt="Item 2" />
+                        <NavLink to="/cart" className={`w-28 h-[70px] border border-stone-300 rounded-lg overflow-hidden nav-link`} ><img className=" w-full h-full   rounded-lg object-cover rounded-l-lg" src="https://www.cookerru.com/wp-content/uploads/2022/09/pan-fried-noodles-main-preview.jpg" alt="Item 2" />
                         </NavLink>
 
                         <div className="p-3 w-full">
@@ -56,8 +56,9 @@ const CartModal = () => {
                 {/* Buttons */}
                 <div className="p-4 border-t border-gray-200 font-medium   text-base">
                     <p className=" flex justify-between"><span className='text-[var(--text)]'>Total:</span> <span className="font-semibold text-[var(--contrast2)]">$160.00</span></p>
-                    <ButtonIn title="view cart" />
-                    <ButtonOut title="Checkout" />
+                    <div className="h-[44px] mb-2"><ButtonIn title="view cart" /></div>
+                    <div className="h-[44px]"> <ButtonOut title="Checkout" /></div>
+                   
                 </div>
             </div>
 

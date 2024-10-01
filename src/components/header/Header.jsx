@@ -1,57 +1,76 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Logo from '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom';
 import ListMenu from "../ui/ListMenu";
-import { tabsSettings } from '../../settings/site-header'
+import { headerSettings } from '../../settings/site-header'
 import CartModal from '../modal/cart/CartModal';
 import SearchModel from '../modal/search/SearchModel';
+import SideMenuDrawer from '../modal/sidebarDrawer/SideMenuDrawer';
+import attachHoverListeners from '../../utilities/hoverListeners';
 
 const Header = ({ showFixedNavbar }) => {
   const [isCartModalOpen, setCartModalOpen] = useState(false);
   const [isSearchModalOpen, setSearchModalOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+
+  ////////  Reattach MouseCursor event listeners
+  useEffect(() => {
+    if (isDrawerOpen || isCartModalOpen || isSearchModalOpen) {
+      attachHoverListeners();
+    }
+  }, [isDrawerOpen, isCartModalOpen, isSearchModalOpen]);
 
   return (
     <>
+      {/* <SideMenuDrawer /> */}
+      <SideMenuDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
+      {/* {isDrawerOpen && ( <SideMenuDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />  )} */}
 
-      <header className={` ${showFixedNavbar ? `px-6 sm:px-0 slide-bottom fixed top-0  w-[100%] max-w-[1600px] flex justify-between h-[90px]` : 'grid grid-cols-[minmax(100px,200px),1fr] h-[110px] xl:h-[140px]  pl-[40px] w-full '}   items-center bg-[var(--light)]  `} style={{ boxShadow: "var(--box-shadow)" }}>
+      <header className={` ${showFixedNavbar ? `px-6 sm:px-0 slide-bottom fixed top-0  w-[100%] max-w-[1600px] flex justify-between h-[90px]` : 'grid grid-cols-[minmax(100px,200px),1fr] h-[110px] xl:h-[140px]  pl-[40px] w-full '}   items-center bg-[var(--light)]   `} style={{ boxShadow: "var(--box-shadow)" }}>
         {/* LOgo */}
         <div className={`    ${showFixedNavbar ? 'slide-right' : 'w-full'}`}>
-          <NavLink>
+          <NavLink to="/">
             <img src={Logo} alt="Logo" className="" />
           </NavLink>
         </div>
+
         {/* Navbar*/}
         <nav className={` h-full ${showFixedNavbar ? `w-[80%]` : ""} `}>
-          {/* Red */}
 
+          {/* Red */}
           <div className={`bg-[var(--contrast)] h-[35%] w-full  justify-between items-center text-gray-100 px-[50px] pe-24  ${showFixedNavbar ? `hidden` : 'hidden xl:!flex'} `}>
             <div className={``}>
               <i className="fa-regular fa-clock text-white"></i>  09:00 am - 06:00 pm
             </div>
+
             <div className={`flex gap-6 justify-between items-center `}>
-              <p>Follow Us:</p> <div className={`flex gap-4 justify-between items-center`}>
-                <NavLink><i className="fa-brands fa-facebook-f nav-link"></i></NavLink>
-                <NavLink><i className="fa-brands fa-twitter nav-link"></i></NavLink>
-                <NavLink> <i className="fa-brands fa-youtube nav-link"></i></NavLink>
-                <NavLink> <i className="fa-brands fa-linkedin-in nav-link"></i></NavLink>
+              <p>Follow Us:</p><div className={`flex gap-4 justify-between items-center`}>
+                {headerSettings.socials.map((social, index) => (
+                  <NavLink key={social.id + social.icon} to={social.path}><i className={`${social.icon} nav-link`}></i></NavLink>
+                ))}
               </div>
             </div>
+
           </div>
 
           {/* Black */}
           <div className={`${showFixedNavbar ? ' h-full bg-[var(--light)]  font-bold' : 'h-full xl:h-[65%]  sm:pe-24 bg-[var(--light)] xl:bg-[var(--dark)] text-[var(--light)]'}   w-full p-4  px-[30px] sm:px-[50px] flex items-center justify-end xl:justify-between `}>
             {/* Tabs */}
             <div className={`hidden xl:!flex items-center h-full gap-6`}>
-              {tabsSettings.tabs.map((tab, index) => (
+              {headerSettings.tabs.map((tab, index) => (
                 <div key={index}>
                   {tab?.menu ? (
-                    <NavLink className='flex gap-4 relative nav-link' data-dropdown-offset-skidding="90" data-dropdown-offset-distance="20" id="multiLevelDropdownButton" data-dropdown-toggle={tab.label + index} data-dropdown-trigger="hover" >
+                    <div className='flex gap-4 relative nav-link' data-dropdown-offset-skidding="90" data-dropdown-offset-distance="20" id="multiLevelDropdownButton" data-dropdown-toggle={tab.label + index} data-dropdown-trigger="hover" >
                       {tab.label} <i className="fa-solid fa-plus"></i>
                       <ListMenu id={tab.label + index} menu={tab.menu} />
-                    </NavLink>
+                    </div>
                   ) : (
-                    <NavLink to={tab.path} className='flex items-center gap-4 nav-link'>
+                    <NavLink to={tab.path || ""} className='flex items-center gap-4 nav-link'>
                       {tab.label} <i className="fa-solid fa-plus"></i>
                     </NavLink>
                   )}
@@ -65,20 +84,20 @@ const Header = ({ showFixedNavbar }) => {
 
             {/* Links */}
             <div className={`flex gap-3 sm:gap-6 justify-between items-center  text-xl text-[var(--text)] font-thin ${showFixedNavbar ? 'slide-left' : ''}`}>
-              <NavLink
+              <div
                 onClick={() => setSearchModalOpen(true)}
-                // onClick={() => setSearchModalOpen(false)}
-                >
-                  <i className="fa-solid fa-magnifying-glass nav-link "></i>
-              </NavLink>
+
+              >
+                <i className="fa-solid fa-magnifying-glass nav-link "></i>
+              </div>
 
               {isSearchModalOpen && <SearchModel isModalOpen={isSearchModalOpen} closeModal={setSearchModalOpen} />}
 
               <div
-                className="relative"
+                className="relative  "
                 onMouseEnter={() => setCartModalOpen(true)}
                 onMouseLeave={() => setCartModalOpen(false)}>
-                <NavLink>
+                <NavLink to="/cart">
 
                   <svg height="28" viewBox="0 0 24 24"
                     width="28"
@@ -87,17 +106,19 @@ const Header = ({ showFixedNavbar }) => {
                       className={`fa-solid fa-cart-shopping ${isCartModalOpen ? "text-[var(--contrast2)] " : ""} nav-link`}
                       fill={isCartModalOpen ? "var(--contrast)" : "currentColor"}
                       stroke="currentColor"
-                      stroke-width=".9"
+                      strokeWidth=".9"
                     /></svg>
+
+                  <div className="absolute top-[-12px] right-[-12px] bg-[var(--contrast2)] text-white font-semibold rounded-full h-3.5 w-3.5 p-2 flex items-center justify-center text-[10px]">
+                    5
+                  </div>
                 </NavLink>
-                <div className="absolute top-[-10px] right-[-10px] bg-[var(--contrast2)] text-white font-semibold rounded-full h-3.5 w-3.5 p-2 flex items-center justify-center text-[10px]">
-                  5
-                </div>
-                {isCartModalOpen && <CartModal />}
                 {/* <CartModal /> */}
+                {isCartModalOpen && <CartModal />}
               </div>
 
-              <NavLink> <i className="fa-solid fa-bars"></i> </NavLink>
+              <NavLink onClick={toggleDrawer}> <i className="fa-solid fa-bars"></i> </NavLink>
+
             </div>
 
           </div>
@@ -115,46 +136,3 @@ const Header = ({ showFixedNavbar }) => {
 
 export default Header
 
-
-
-
-//  {/* Fixed Navbar */}
-//  {showFixedNavbar && (
-
-//   <header className={`px-6 sm:px-0 slide-bottom fixed top-0 w-full flex justify-between items-center bg-[var(--light)]  w-full h-[90px] `}>
-//     {/* LOgo */}
-//     <div className="slide-right  ">
-//       <NavLink>
-//         <img src={Logo} alt="Logo" className="" />
-//       </NavLink>
-//     </div>
-
-
-//     {/* Tabs */}
-
-//     <div className={`hidden xl:!flex items-center h-full gap-6 font-semibold `}>
-//       <NavLink to={`/`} className='flex items-center gap-4'>Home <i className="fa-solid fa-plus"></i></NavLink>
-//       <NavLink className='flex gap-4'>About Us <i className="fa-solid fa-plus"></i></NavLink>
-//       <NavLink className='flex gap-4'>Shop <i className="fa-solid fa-plus"></i></NavLink>
-//       <NavLink className='flex gap-4'>Pages <i className="fa-solid fa-plus"></i></NavLink>
-//       <NavLink className='flex gap-4'>Contact Us <i className="fa-solid fa-plus"></i></NavLink>
-//     </div>
-
-//     {/* Links */}
-//     <div className={`flex gap-3 sm:gap-6 justify-between items-center text-xl text-[var(--text)] font-light slide-left `}>
-//       <NavLink><i className="fa-solid fa-magnifying-glass "></i></NavLink>
-//       <div className="relative">
-//         <NavLink>
-//           <i className="fa-solid fa-cart-shopping text-2xl"></i>
-//         </NavLink>
-//         <div className="absolute top-[-10px] right-[-10px] bg-[var(--contrast2)] text-white font-semibold rounded-full h-3.5 w-3.5 p-2 flex items-center justify-center text-[10px]">
-//           5
-//         </div>
-//       </div>
-//       <NavLink> <i className="fa-solid fa-bars"></i> </NavLink>
-//     </div>
-
-
-
-//   </header >
-// )}

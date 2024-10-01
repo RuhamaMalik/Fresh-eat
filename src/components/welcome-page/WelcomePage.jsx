@@ -35,6 +35,7 @@ const WelcomeScreen = ({ children }) => {
 
     const [showFixedNavbar, setShowFixedNavbar] = useState(false);
 
+    
     const handleScroll = () => {
         if (scrollContainerRef.current) {
             const scrollTop = scrollContainerRef.current.scrollTop;
@@ -64,7 +65,7 @@ const WelcomeScreen = ({ children }) => {
 
 
     return (
-        <div className="relative h-screen max-h-[100vh] w-full overflow-hidden">
+        <div className="relative h-screen max-h-[100vh] w-full overflow-hidden bg-transparent">
 
             {/* Div 1 */}
             <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col gap-8  items-center justify-center h-screen max-h-[100vh] w-full">
@@ -97,9 +98,11 @@ const WelcomeScreen = ({ children }) => {
             </div>
 
             {/* Div 3 (Content) */}
-            <div className={`absolute top-0 left-0 right-0 h-full overflow-hidden ${hideAnim ? 'z-20' : '-z-10'}`}>
+            <div className={`absolute top-0 left-0 right-0 h-full overflow-hidden ${hideAnim ? 'z-20 ' : '-z-10'}`}>
                 <div ref={scrollContainerRef} className="max-w-[1600px] h-full overflow-y-auto mx-auto bg-[var(--bg2)]">
-                  <MouseCursor/>
+                  {/* <MouseCursor/> */}
+                    {/* 
+                    <MouseCursor/> */}
                     <Header showFixedNavbar={showFixedNavbar} />
                     {children}
                 </div>
@@ -109,3 +112,8 @@ const WelcomeScreen = ({ children }) => {
 };
 
 export default WelcomeScreen;
+
+
+
+
+
