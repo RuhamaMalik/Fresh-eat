@@ -12,6 +12,7 @@ const ListMenu = ({ id, menu }) => {
                         <li key={index}>
                             {tab?.subMenu ? (
                                 <NavLink id="doubleDropdownButton"
+                                to=''
                                     data-dropdown-offset-distance="0"
                                     data-dropdown-toggle={tab.label + index}
                                     data-dropdown-placement="right-start"

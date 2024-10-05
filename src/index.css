@@ -36,8 +36,8 @@ body {
   transition: color 0.4s ease-in-out ;
   cursor: pointer;
   position: relative;
-  z-index: 10000000 !important;
-}
+  /* z-index: 10000000 !important; */
+  z-index: 1000 !important;}
 
 .nav-link:hover {
   color: var(--contrast);
@@ -72,9 +72,18 @@ body {
 
 /* ///////////////// Z-index */
 
-.customIndex{
-  position: relative;
-  z-index: 10000000000 !important;
+.customIndex1{
+  /* z-index: 10000000000 !important; */
+  z-index: 1000 !important;
+}
+.customIndex2{
+  z-index: 10000  !important;
+}
+.customIndex3{
+  z-index: 100000 !important;
+}
+.customIndex4{
+  z-index: 1000000000 !important;
 }
 
 

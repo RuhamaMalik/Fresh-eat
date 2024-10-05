@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import './welcomePage.css';
 import Header from "../header/Header";
-import MouseCursor from "../ui/cursor/Cursor";
+// import MouseCursor from "../ui/cursor/Cursor";
 
 const WelcomeScreen = ({ children }) => {
     const [animated, setAnimated] = useState(false);
@@ -15,7 +15,7 @@ const WelcomeScreen = ({ children }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setHideAnim(true);
-        }, 8000);
+        }, 5000);
 
         return () => clearTimeout(timer);
     }, []);
