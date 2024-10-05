@@ -99,7 +99,7 @@ const WelcomeScreen = ({ children }) => {
 
             {/* Div 3 (Content) */}
             <div className={`absolute top-0 left-0 right-0 h-full overflow-hidden ${hideAnim ? 'z-20 ' : '-z-10'}`}>
-                <div ref={scrollContainerRef} className="max-w-[1600px] h-full overflow-y-auto mx-auto bg-[var(--bg2)]">
+                <div ref={scrollContainerRef} className="max-w-[1800px] h-full overflow-y-auto mx-auto bg-[var(--bg2)]">
                   {/* <MouseCursor/> */}
                     {/* 
                     <MouseCursor/> */}

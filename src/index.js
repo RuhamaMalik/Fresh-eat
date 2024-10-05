@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import './components/animations/keyframes.css'
 import reportWebVitals from './reportWebVitals';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
