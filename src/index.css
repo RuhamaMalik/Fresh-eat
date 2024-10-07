@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: "Epilogue", sans-serif;
+  font-family: "Epilogue", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition:  0.4s ease-in-out ;
@@ -85,10 +85,52 @@ body {
 .customIndex4{
   z-index: 1000000000 !important;
 }
+.customIndex5{
+  z-index: 100000000000 !important;
+}
 
 
 /* ////////////////  Cursor Pointer */
 
 .pointer{
   cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.item-content {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, #FFF 63.33%);
+  
+
+}
+
+/* ///////////// Swipper slider Pagiation */
+
+.swiper-pagination{
+  position: static !important;
+  margin-top: 20px !important;
+}
+
+
+.swiper-pagination-bullets{
+width: 100px !important;
+}
+
+.swiper-pagination-bullet{
+  border-radius: 0 !important;
+  width: 1px !important;
+  height: 14px !important;
 }

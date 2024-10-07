@@ -31,7 +31,7 @@ const Header = ({ showFixedNavbar }) => {
       <SideMenuDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
       {/* {isDrawerOpen && ( <SideMenuDrawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />  )} */}
 
-      <header className={` ${showFixedNavbar ? `px-6 sm:px-0 slide-bottom fixed top-0  w-[100%] max-w-[1600px] flex justify-between h-[90px]` : 'grid grid-cols-[minmax(100px,200px),1fr] h-[110px] xl:h-[140px]  pl-[40px] w-full '}   items-center bg-[var(--light)]  customIndex1 `} style={{ boxShadow: "var(--box-shadow)" }}>
+      <header className={` ${showFixedNavbar ? `px-6 sm:px-0 slide-bottom fixed top-0  w-[100%] max-w-[1800px] flex justify-between h-[90px]` : 'grid grid-cols-[minmax(100px,200px),1fr] h-[110px] xl:h-[140px]  pl-[40px] w-full '}   items-center bg-[var(--light)]  customIndex1 `} style={{ boxShadow: "var(--box-shadow)" }}>
         {/* LOgo */}
         <div className={`    ${showFixedNavbar ? 'slide-right' : 'w-full'}`}>
           <NavLink to="/">

@@ -36,7 +36,7 @@ const HeroBanner = () => {
                 autoplay={{
                     delay: 5000,
                 }}
-                loop={true} // Enables looping
+                loop={true} 
                 onSlideChange={(swiper) => {
                     resetAnimation(swiper.activeIndex); // Reset animation on slide change
                 }}
@@ -62,13 +62,13 @@ const HeroBanner = () => {
                     <div className='flex items-center justify-center gap-8 py-32 px-8 sm:px-20 md:p-32'>
                         <div className="xl:w-1/2 text-left">
                             <h3 className="text-[var(--contrast2)] text-xl font-extrabold my-4 animate__animated animate__slideInRight ">WELCOME FRESHEAT</h3>
-                            <h1 className="text-[var(--light)] text-5xl md:text-7xl 2xl:text-8xl font-extrabold animate__animated animate__slideInRight ">SPICY FRIED CHICKEN</h1>
+                            <h1 className="text-[var(--light)] text-5xl md:text-7xl 2xl:text-8xl font-extrabold animate__animated animate__slideInRight ">CHICAGO DEEP KING PIZZA</h1>
                             <div className='w-36 h-[52px] animate__animated animate__slideInRight '>
                                 <ButtonIn title="Order Now" icon='fa-solid fa-arrow-right' />  
                             </div>
                         </div>
                         <div className="hidden xl:!inline-block w-1/2 animate__animated animate__slideInRight animate__slow">
-                            <img src={banner1} alt="Banner Image" />
+                            <img src={banner2} alt="Banner Image" />
                         </div>
                     </div>
                 </SwiperSlide>
