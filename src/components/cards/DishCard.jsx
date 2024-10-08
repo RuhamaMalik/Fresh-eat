@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import CircleShap from '../../assets/images/food-items/circleShape.png'
-import Item1 from '../../assets/images/food-items/item1_1.png'
 
 const DishCard = ({item}) => {
     return (

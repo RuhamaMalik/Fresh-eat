@@ -71,3 +71,30 @@
             animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             /* animation-delay: .5s; */
   }  
+
+
+  /* ///////////////// float x */
+
+  .float-x {
+    animation-name: float-x;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+    
+  
+    @keyframes float-x {
+    0% {
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+    50% {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    100% {
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+  }
+  

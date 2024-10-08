@@ -21,7 +21,7 @@ const SearchModel = ({ closeModal, isModalOpen }) => {
         <>
             {isModalOpen && (
                 <div onClick={() => setAnimationClass("animate__fadeOut")}
-                    className={`h-[100vh] w-[100vw] fixed top-0 left-0 customIndex2 bg-[var(--light2)] animate__animated ${animationClass}`}
+                    className={`h-[100vh] w-[100vw] fixed top-0 left-0 customIndex4 bg-[var(--light2)] animate__animated ${animationClass}`}
                 >
                     <i
                         onClick={() => setAnimationClass("animate__fadeOut")}

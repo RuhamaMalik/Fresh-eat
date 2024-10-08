@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../../assets/logo.svg';
-import { images } from '../../../settings/gallery';
+import { images } from '../../../settings/data/gallery';
 import ButtonIn from '../../ui/buttons/ButtonIn';
 import { headerSettings } from '../../../settings/site-header';
 import ImageModal from '../../image-gallery/ImageModal';
@@ -83,7 +83,7 @@ const SideMenuDrawer = ({ toggleDrawer, isDrawerOpen }) => {
 
                 {/* <ImageGallery images={images} isOpen={isOpen} setIsOpen={setIsOpen} /> */}
                 <div className="grid grid-cols-3 items-center gap-2 sm:gap-4 ">
-                    {images.map((img, index) => (
+                    {images?.map((img, index) => (
                         <img
                             key={index}
                             src={img}

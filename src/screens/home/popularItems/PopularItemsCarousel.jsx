@@ -25,8 +25,8 @@ const PopularItemsCarousel = ({ data }) => {
         }}
         autoplay={{
           delay: 2500,
-          // disableOnInteraction: true,
         }}
+        speed="2000"
         breakpoints={{
           765: {
             slidesPerView: 2,
@@ -42,12 +42,11 @@ const PopularItemsCarousel = ({ data }) => {
           },
         }}
         loop={true}
-        // centeredSlides={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper "
+        className="mySwiper  "
       >
         {
-          data.map((item, index) => (
+          data?.map((item, index) => (
             <SwiperSlide key={index}> <DishCard item={item} /> </SwiperSlide>
           ))
         }

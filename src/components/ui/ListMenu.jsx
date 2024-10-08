@@ -8,7 +8,7 @@ const ListMenu = ({ id, menu }) => {
             {/* Dropdown menu */}
             <div id={id} className="  z-10 hidden    bg-white border-b shadow w-64 dark:bg-gray-700 slide-top" style={{ boxShadow: "var(--box-shadow)" }} >
                 <ul className="  text-[var(--dark)] dark:text-gray-200  divide-y divide-gray-200" aria-labelledby="multiLevelDropdownButton" >
-                    {menu.map((tab, index) => (
+                    {menu?.map((tab, index) => (
                         <li key={index}>
                             {tab?.subMenu ? (
                                 <NavLink id="doubleDropdownButton"
@@ -46,7 +46,7 @@ export const SubMenu = ({ id, menu }) => {
             <div id={id} className="z-20 hidden bg-white shadow w-64 dark:bg-gray-700     slide-top  " style={{ boxShadow: "var(--box-shadow)" }}>
                 <ul className=" text-[var(--dark)] divide-y divide-gray-200  dark:text-gray-200" aria-labelledby="doubleDropdownButton">
 
-                    {menu.map((tab, index) => (
+                    {menu?.map((tab, index) => (
                         <li key={index}>
                             <NavLink to={tab.path} className="block font-semibold p-4 transition-colors duration-700 ease-in-out hover:bg-[var(--contrast)] hover:text-[var(--light)] dark:hover:bg-gray-600 dark:hover:text-white">
                                 {tab.label}

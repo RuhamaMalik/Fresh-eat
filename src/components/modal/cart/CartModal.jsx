@@ -12,12 +12,12 @@ const cartData = [
 const CartModal = () => {
     return (
         <>
-            <div className={`max-h-[700px] p-[18px] w-[300px] bg-white absolute top-14 -right-6 sm:top-12 sm:right-0  shadow-lg  animate__animated animate__fadeIn flex flex-col z-50`} style={{ boxShadow: "var(--box-shadow2)" }}>
+            <div className={`max-h-[700px] p-[18px] w-[300px] bg-white absolute top-14 -right-6 sm:top-12 sm:right-0  shadow-lg  animate__animated animate__fadeIn flex flex-col customIndex2`} style={{ boxShadow: "var(--box-shadow2)" }}>
 
                 <div className="flex flex-col p-4 gap-4 text-base items-start">
 
-                    {cartData.map((item, index) => (
-                        <div className="flex items-center rounded-lg shadow-sm hover:bg-gray-100 ">
+                    {cartData?.map((item, index) => (
+                        <div key={index} className="flex items-center rounded-lg shadow-sm hover:bg-gray-100 ">
                             <NavLink to="/cart" className={`w-28 h-[70px] border border-stone-300 rounded-lg overflow-hidden nav-link`} ><img className=" w-full h-full   rounded-lg object-cover rounded-l-lg" src={item.image} alt="Item 2" />
                             </NavLink>
 

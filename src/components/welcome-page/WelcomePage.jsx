@@ -76,7 +76,7 @@ const WelcomeScreen = ({ children }) => {
 
                 {/* Animated Text */}
                 <div className={`flex gap-x-2 sm:gap-x-4  items-center mt-12`}>
-                    {text.split("").map((letter, index) => (
+                    {text.split("")?.map((letter, index) => (
                         <div key={index} className={`${animated ? "bg-[var(--contrast-dark)]" : "bg-[var(--contrast)]"} relative w-fit h-fit text-transparent bg-contain bg-center bg-clip-text mx-auto leading-none z-10 text-[3em] sm:text-[5.5em] font-semibold p-0  hideCol mx-auto`}>
                             {letter}
                             <div className={`${animated ? "animate-red" : "animate-black"} letter-${index} p-0`}>

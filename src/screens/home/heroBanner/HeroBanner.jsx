@@ -48,8 +48,8 @@ const HeroBanner = () => {
                         <div className="xl:w-1/2 text-left">
                             <h3 className="text-[var(--contrast2)] text-xl font-extrabold my-4 animate__animated animate__slideInRight ">WELCOME FRESHEAT</h3>
                             <h1 className="text-[var(--light)] text-5xl md:text-7xl 2xl:text-8xl font-extrabold animate__animated animate__slideInRight ">SPICY FRIED CHICKEN</h1>
-                            <div className='w-36 h-[52px] animate__animated animate__slideInRight '>
-                                <ButtonIn title="Order Now" icon='fa-solid fa-arrow-right' />  
+                            <div className='w-40 h-[52px] animate__animated animate__slideInRight '>
+                                <ButtonIn title="Order Now" icon='fa-solid fa-arrow-right' iconBg={true} />  
                             </div>
                         </div>
                         <div className="hidden xl:!inline-block w-1/2 animate__animated animate__slideInRight animate__slow">
@@ -63,8 +63,8 @@ const HeroBanner = () => {
                         <div className="xl:w-1/2 text-left">
                             <h3 className="text-[var(--contrast2)] text-xl font-extrabold my-4 animate__animated animate__slideInRight ">WELCOME FRESHEAT</h3>
                             <h1 className="text-[var(--light)] text-5xl md:text-7xl 2xl:text-8xl font-extrabold animate__animated animate__slideInRight ">CHICAGO DEEP KING PIZZA</h1>
-                            <div className='w-36 h-[52px] animate__animated animate__slideInRight '>
-                                <ButtonIn title="Order Now" icon='fa-solid fa-arrow-right' />  
+                            <div className='w-40 h-[52px] animate__animated animate__slideInRight '>
+                                <ButtonIn title="Order Now" icon='fa-solid fa-arrow-right' iconBg={true} />  
                             </div>
                         </div>
                         <div className="hidden xl:!inline-block w-1/2 animate__animated animate__slideInRight animate__slow">

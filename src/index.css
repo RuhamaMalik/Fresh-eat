@@ -36,7 +36,6 @@ body {
   transition: color 0.4s ease-in-out ;
   cursor: pointer;
   position: relative;
-  /* z-index: 10000000 !important; */
   z-index: 1000 !important;}
 
 .nav-link:hover {
@@ -74,19 +73,19 @@ body {
 
 .customIndex1{
   /* z-index: 10000000000 !important; */
-  z-index: 1000 !important;
-}
-.customIndex2{
-  z-index: 10000  !important;
-}
-.customIndex3{
   z-index: 100000 !important;
 }
+.customIndex2{
+  z-index: 1000000  !important;
+}
+.customIndex3{
+  z-index: 10000000 !important;
+}
 .customIndex4{
-  z-index: 1000000000 !important;
+  z-index: 100000000000 !important;
 }
 .customIndex5{
-  z-index: 100000000000 !important;
+  z-index: 10000000000000 !important;
 }
 
 
@@ -102,15 +101,7 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
+/* ////////// popular product */
 .item-content {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, #FFF 63.33%);
   
@@ -134,3 +125,19 @@ width: 100px !important;
   width: 1px !important;
   height: 14px !important;
 }
+
+.swiper-pagination-bullet-active{
+background-color: var(--contrast) !important;
+}
+
+
+
+/* ////////////  offer card */
+
+
+/* .shape {
+  position: absolute;
+  top: 0;
+  left: -30px;
+} */
+

@@ -50,7 +50,7 @@ const Header = ({ showFixedNavbar }) => {
 
             <div className={`flex gap-6 justify-between items-center `}>
               <p>Follow Us:</p><div className={`flex gap-4 justify-between items-center`}>
-                {headerSettings.socials.map((social, index) => (
+                {headerSettings?.socials.map((social, index) => (
                   <NavLink key={social.id + social.icon} to={social.path}><i className={`${social.icon} nav-link`}></i></NavLink>
                 ))}
               </div>
@@ -62,7 +62,7 @@ const Header = ({ showFixedNavbar }) => {
           <div className={`${showFixedNavbar ? ' h-full bg-[var(--light)]  font-bold' : 'h-full xl:h-[65%]  sm:pe-24 bg-[var(--light)] xl:bg-[var(--dark)] text-[var(--light)]'}   w-full p-4  px-[30px] sm:px-[50px] flex items-center justify-end xl:justify-between `}>
             {/* Tabs */}
             <div className={`hidden xl:!flex items-center h-full gap-6`}>
-              {headerSettings.tabs.map((tab, index) => (
+              {headerSettings?.tabs.map((tab, index) => (
                 <div key={index}>
                   {tab?.menu ? (
                     <div className='flex gap-4 relative nav-link' data-dropdown-offset-skidding="90" data-dropdown-offset-distance="20" id="multiLevelDropdownButton" data-dropdown-toggle={tab.label + index} data-dropdown-trigger="hover" >
