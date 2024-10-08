@@ -4,6 +4,7 @@ import PopularItemss from './popularItems/PopularItemss'
 import About from './About'
 import OfferCard from '../../components/cards/OfferCard'
 import items from '../../settings/data/items';
+import BestSelling from './bestSelling/BestSelling'
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       </div>
 
       <About />
+      <BestSelling />
     </>
   )
 }

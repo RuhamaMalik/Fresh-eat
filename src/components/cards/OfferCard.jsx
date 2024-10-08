@@ -15,7 +15,7 @@ const OfferCard = ({ data }) => {
                     <h3 className="text-xl font-black uppercase mb-4 " >{data.title}</h3>
                     <h6 className="text-xs text-[var(--contrast2)] font-black uppercase ">limits Time Offer</h6>
                     <div className='w-40 h-[50px] '>
-                     {data.type === "weekly" ? (<ButtonIn title="Order Now" icon='fa-solid fa-arrow-right'  border={true} />) : (<ButtonOut title="Order Now" icon='fa-solid fa-arrow-right' border={true} />)}   
+                        {data.type === "weekly" ? (<ButtonIn title="ORDER NOW" icon='fa-solid fa-arrow-right' border={true} bg={true} />) : (<ButtonOut title="ORDER NOW" icon='fa-solid fa-arrow-right' border={true} />)}
                     </div>                </div>
                 <div className="relative">   {/* Offer Thumb*/}
                     <img className=" w-[276px] h-[260px] object-contain	" src={data.image} alt="thumb" />

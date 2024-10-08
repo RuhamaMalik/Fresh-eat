@@ -38,7 +38,7 @@ const SideMenuDrawer = ({ toggleDrawer, isDrawerOpen }) => {
 
     return (
         <>
-        {/* Image Gallery Slider */}
+            {/* Image Gallery Slider */}
             {isOpen && (
                 <ImageModal
                     images={images}
@@ -49,7 +49,7 @@ const SideMenuDrawer = ({ toggleDrawer, isDrawerOpen }) => {
                 />
             )}
 
-          
+
             {/* Background Overlay */}
             {isDrawerOpen && <div onClick={toggleDrawer} className="w-[100vw] h-[100vh] opacity-[0.8] bg-[#151515] customIndex2 fixed  top-0"></div>}
 
@@ -107,7 +107,7 @@ const SideMenuDrawer = ({ toggleDrawer, isDrawerOpen }) => {
                             </li>))}
                     </ul>
 
-                    <div className="h-[55px] mb-[20px]"> <ButtonIn title="Order Now" /></div>
+                    <div className="h-[55px] mb-[20px]"> <ButtonIn title="ORDER NOW" /></div>
 
                     <div className="flex  gap-2 items-center mt-16">
                         {headerSettings.socials.map((social, index) => (
