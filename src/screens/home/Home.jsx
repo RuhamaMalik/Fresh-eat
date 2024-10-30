@@ -4,7 +4,9 @@ import PopularItemss from './popularItems/PopularItemss'
 import About from './About'
 import OfferCard from '../../components/cards/OfferCard'
 import items from '../../settings/data/items';
-import BestSelling from './bestSelling/BestSelling'
+import BestSelling from './bestSelling/BestSelling';
+import FoodMenu from './menu/FoodMenu';
+import Cta from './Cta'
 
 
 const Home = () => {
@@ -22,6 +24,9 @@ const Home = () => {
 
       <About />
       <BestSelling />
+      <Cta />
+      <FoodMenu />
+
     </>
   )
 }
